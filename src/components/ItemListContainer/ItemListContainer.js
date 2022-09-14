@@ -7,13 +7,13 @@ const ItemListContainer = ({greeting}) => {
 
     useEffect(() => {
         getProducts.then((response) => {
-            setProductList(response)
+            setProductList(response);
         })
     },[])
-
+    
     const getProducts = new Promise((resolve,reject) => {
             setTimeout(() => {
-                resolve(data)
+                resolve(data.filter ((prod) => prod.id === '3'))
             }, 2000);
         });
 
