@@ -19,17 +19,10 @@ const ItemListContainer = ({greeting}) => {
     }
 
     useEffect(() => {
-        getProducts.then((response) => {
-            setProductList(response);
-        })
-    },[])
+        getProductsCategory();
+    },[categoryName]);
     
-    const getProducts = new Promise((resolve,reject) => {
-            setTimeout(() => {
-                resolve(data)
-            }, 2000);
-        });
-
+    
     
 
     return (
