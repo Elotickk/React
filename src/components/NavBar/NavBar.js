@@ -1,6 +1,7 @@
+import { NavLink } from 'react-router-dom';
 import logo from '../../logo.svg';
 import CartWidget from '../CartWidget/CartWidget';
-
+import './navBar.css'
 
 const NavBar = () => {
     return (
@@ -13,14 +14,25 @@ const NavBar = () => {
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                            {/* <a class="nav-link active" aria-current="page" href="/">Inicio</a>
                             <a class="nav-link" href="/">Productos</a>
-                            <a class="nav-link" href="/">Nosotros</a>
+                            <a class="nav-link" href="/">Nosotros</a> */}
+                            <li>Home</li>
+                            <li>
+                                <NavLink to={'/category/CPU_AMD'} className={({ isActive }) => (isActive ? 'rojo' : 'verde')}>
+                                    Cpu_AMD
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to={'/category/CPU_Intel'} className={({ isActive }) => (isActive ? 'rojo' : 'verde')}>
+                                    Cpu_Intel
+                                </NavLink>
+                            </li>
                         </div>
                     </div>
                 </div>
                 <CartWidget/>
-            </nav>
+            </nav> 
         </div>
     )
 }
