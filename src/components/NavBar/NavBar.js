@@ -8,7 +8,9 @@ const NavBar = () => {
         <div>
             <nav class="navbar navbar-expand-lg bg-Primary">
                 <div class="container-fluid">
-                    <img src={logo} className="App-logo-bs" alt="logo" />
+                    <NavLink to={'/'}>
+                        <img src="img/pngwing.com.png" className="App-logo-bs" alt="logo" />
+                    </NavLink>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>

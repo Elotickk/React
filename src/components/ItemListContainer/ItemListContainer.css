@@ -1,0 +1,4 @@
+.listContainer {
+    display: flexbox;
+    flex-direction: row;
+}

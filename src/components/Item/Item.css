@@ -1,4 +1,6 @@
-.Item {
+.card {
     text-decoration: none;
-    
+    display: flexbox;
+    flex-direction: row;
+    color: black;
 }

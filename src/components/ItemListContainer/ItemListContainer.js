@@ -2,6 +2,7 @@ import data from '../mockData';
 import { useEffect, useState } from 'react';
 import ItemList from '../ItemList/itemList';
 import { useParams } from 'react-router-dom'
+import './ItemListContainer.css'
 
 const ItemListContainer = ({greeting}) => {
     const [productList, setProductList] = useState ([]);

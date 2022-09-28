@@ -5,7 +5,7 @@ import './ItemList.css'
 
 const ItemList = ({lista}) => {
     return (
-    <div className="listContainer">
+    <div className="container">
         {
             lista.map((item) => (
                 <Link 
