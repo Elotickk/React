@@ -12,8 +12,8 @@
 //         })
 //     },[])
 
-//     // const getProduct = () => {
-//     //     setProductList(data.filter(product => product.id === id))
+    // const getProduct = () => {
+    //     setProductList(data.filter(product => product.id === id))
 //     // }
 
 //     const getProducts = new Promise((resolve,reject) => {
@@ -36,19 +36,50 @@
 
 // export default ItemDetailContainer
 
+// import { useEffect, useState } from "react";
+// import ItemDetail from "../ItemDetail/ItemDetail";
+// import data from '../mockData';
+// import { useParams } from "react-router-dom";
+
+// const ItemDetailContainer = () => {
+//     const { id } = useParams();
+
+//     const [product, setProduct] = useState({});
+
+//     useEffect(() => {
+//         getProducts.then((response) => {
+//             setProduct(response);
+//         });
+//     }, [id]);
+
+//     const getProducts = new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve(data);
+//         }, 2000);
+//     });
+
+//     return <div className='modal-container'>
+//                 Esoty en el item Detail
+//                  {/* {<ItemDetail product={}/>} */}
+//             </div>
+// };
+
+// export default ItemDetailContainer;
+
 import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import data from '../mockData';
 import { useParams } from "react-router-dom";
 
+
 const ItemDetailContainer = () => {
     const { id } = useParams();
-
-    const [product, setProduct] = useState({});
+    const [product, setProduct] = useState();
 
     useEffect(() => {
-        getProducts.then((response) => {
-            setProduct(response);
+        getProducts.then((products) => {
+            const product = products.filter(product => product.id === id)[0]
+            setProduct(product);
         });
     }, [id]);
 
@@ -58,11 +89,10 @@ const ItemDetailContainer = () => {
         }, 2000);
     });
 
+    
     return <div className='modal-container'>
-                Esoty en el item Detail
-                 {/* {<ItemDetail product={}/>} */}
+                <ItemDetail product={product}/>
             </div>
 };
 
 export default ItemDetailContainer;
-

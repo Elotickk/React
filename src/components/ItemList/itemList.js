@@ -3,21 +3,21 @@ import Item from "../Item/Item"
 import { Link } from 'react-router-dom'
 import './ItemList.css'
 
-const ItemList = ({lista}) => {
+const ItemList = ({ product }) => {
     return (
     <div className="container">
         {
-            lista.map((item) => (
+            product.map((product) => (
                 <Link 
-                    key={item.id}
-                    to={'/details/'+ item.id}
+                    key={product.id}
+                    to={'/details/'+ product.id}
                     style={{ textDecoration: 'none' }}
                 >
                     <Item
-                        title={item.title} 
-                        price={item.price}
-                        category={item.category}
-                        image={item.image}
+                        title={product.title} 
+                        price={product.price}
+                        category={product.category}
+                        image={product.image}
                     />
                 </Link>
             ))

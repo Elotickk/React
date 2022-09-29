@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import './ItemListContainer.css'
 
 const ItemListContainer = ({greeting}) => {
-    const [productList, setProductList] = useState ([]);
+    const [product, setProductList] = useState ([]);
     const { categoryName } = useParams();
     console.log(categoryName)
 
@@ -28,7 +28,7 @@ const ItemListContainer = ({greeting}) => {
 
     return (
         <>
-            <ItemList lista={productList}/>
+            <ItemList product={product}/>
         </>
     )
 }

@@ -1,6 +1,8 @@
 import './Item.css'
 
-const Item = ({title , price , image , category}) => {
+const Item = ({ product }) => {
+    if (!product) return 'Cargando...'
+    const { title , price , category , image } = product;
     return (
     <div className='card m-2'>
         <img width={'200px'} src={image} alt={title}/>
