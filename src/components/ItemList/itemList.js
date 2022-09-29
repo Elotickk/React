@@ -13,11 +13,8 @@ const ItemList = ({ product }) => {
                     to={'/details/'+ product.id}
                     style={{ textDecoration: 'none' }}
                 >
-                    <Item
-                        title={product.title} 
-                        price={product.price}
-                        category={product.category}
-                        image={product.image}
+                    <Item 
+                        product = {product}                       
                     />
                 </Link>
             ))
